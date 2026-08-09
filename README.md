@@ -105,7 +105,9 @@ To-Do¹st was designed with a focus on:
 
 ## 🌐 Live Demo
 
-Coming soon.
+🚀 Try To-Do¹st live:
+
+https://todo1st-eight.vercel.app/
 
 ## 📸 Screenshots
 
