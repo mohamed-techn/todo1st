@@ -1,0 +1,27 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="check" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e8f1ff"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded square background, same shape language as the app's header icon box -->
+  <rect x="16" y="16" width="480" height="480" rx="112" fill="url(#bg)"/>
+
+  <!-- Bold checkmark, simplified for small favicon sizes -->
+  <path
+    d="M 140 268
+       L 216 344
+       L 372 176"
+    fill="none"
+    stroke="url(#check)"
+    stroke-width="56"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>
