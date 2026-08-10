@@ -6,7 +6,6 @@ import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 import CreateRoundedIcon from "@mui/icons-material/CreateRounded";
-// import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import Checkbox from "@mui/material/Checkbox";
 import RadioButtonUncheckedRoundedIcon from "@mui/icons-material/RadioButtonUncheckedRounded";
 import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
@@ -34,10 +33,9 @@ export default function TaskCard({
       sx={{
         p: 0.25,
         borderRadius: 3,
-        marginBottom: .7,
-        // minHeight: { xs: 85, sm: 84 },
-        height: { xs: "auto", sm: 84 },
-        minHeight: { xs : 85 ,sm:78},
+        marginBottom: 0.7,
+        height: "auto",
+        minHeight: 78,
         transition: "all 0.2s ease",
         boxShadow: 1,
         "&:hover": {
@@ -78,15 +76,21 @@ export default function TaskCard({
               checked={isCompleted}
               onChange={() => onToggle(id)}
               disableRipple
-              icon={<RadioButtonUncheckedRoundedIcon sx={{ fontSize: 24 }} />}
-              checkedIcon={<CheckCircleRoundedIcon sx={{ fontSize: 24 }} />}
+              icon={
+                <RadioButtonUncheckedRoundedIcon
+                  sx={{ fontSize: { xs: 20, sm: 24 } }}
+                />
+              }
+              checkedIcon={
+                <CheckCircleRoundedIcon sx={{ fontSize: { xs: 20, sm: 24 } }} />
+              }
               sx={{
                 flexShrink: 0,
                 p: 0.5,
                 mt: "4px",
                 color: "#cbd5e1",
                 "&.Mui-checked": {
-                  color: "#10b981", 
+                  color: "#10b981",
                 },
               }}
               inputProps={{ "aria-label": "Mark task as done" }}
@@ -105,16 +109,14 @@ export default function TaskCard({
               >
                 <Typography
                   sx={{
-                    fontSize: { xs: 14, sm: 15 },
+                    fontSize: { xs: 13.5, sm: 15 },
                     fontWeight: 700,
                     lineHeight: 1.3,
-                    overflow: { xs: "visible", sm: "hidden" },
-                    textOverflow: { xs: "clip", sm: "ellipsis" },
-                    whiteSpace: { xs: "normal", sm: "nowrap" },
-                    display: { xs: "-webkit-box", sm: "block" },
-                    WebkitLineClamp: { xs: 2, sm: "unset" },
-                    WebkitBoxOrient: { xs: "vertical", sm: "unset" },
-                    maxWidth: { xs: "100%", sm: 260 },
+                    overflow: "visible",
+                    textOverflow: "clip",
+                    whiteSpace: "normal",
+                    wordBreak: "break-word",
+                    maxWidth: "100%",
                     textDecoration: isCompleted ? "line-through" : "none",
                     color: isCompleted ? "text.disabled" : "text.primary",
                   }}
@@ -181,13 +183,7 @@ export default function TaskCard({
                       fontWeight: due.isOverdue || due.isUrgent ? 600 : 400,
                     }}
                   >
-                    {/* <CalendarMonthIcon sx={{ fontSize: 18, color: "#1976d2" }} /> */}
-                    <Box
-                      component="span"
-                      sx={{
-                        color: "white",
-                      }}
-                    >
+                    <Box component="span" sx={{ color: "white" }}>
                       📅
                     </Box>
                     {due.label}
@@ -227,11 +223,13 @@ export default function TaskCard({
           <Grid
             item
             xs="auto"
+            alignSelf="center"
             sx={{
               display: "flex",
               flexShrink: 0,
               alignItems: "center",
-              gap: "11px",
+              alignSelf: "center",
+              gap: { xs: "6px", sm: "11px" },
             }}
           >
             {/* DELETE */}
@@ -241,6 +239,7 @@ export default function TaskCard({
                 bgcolor: "white",
                 color: "#ef4444",
                 boxShadow: 1,
+                p: { xs: 0.7, sm: 1 },
                 transition: "all 0.3s ease",
                 "&:hover": {
                   bgcolor: "#ef4444",
@@ -249,7 +248,7 @@ export default function TaskCard({
                 },
               }}
             >
-              <DeleteIcon fontSize="small" />
+              <DeleteIcon sx={{ fontSize: { xs: 18, sm: 20 } }} />
             </IconButton>
             {/* EDIT */}
             <IconButton
@@ -258,6 +257,7 @@ export default function TaskCard({
                 bgcolor: "white",
                 color: "rgb(25, 118, 210)",
                 boxShadow: 1,
+                p: { xs: 0.7, sm: 1 },
                 transition: "all 0.25s ease",
                 "&:hover": {
                   bgcolor: "rgb(25, 118, 210)",
@@ -266,7 +266,7 @@ export default function TaskCard({
                 },
               }}
             >
-              <CreateRoundedIcon fontSize="small" />
+              <CreateRoundedIcon sx={{ fontSize: { xs: 18, sm: 20 } }} />
             </IconButton>
           </Grid>
           {/* BUTTONS */}
